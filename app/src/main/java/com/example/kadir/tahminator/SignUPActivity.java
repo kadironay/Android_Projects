@@ -4,7 +4,6 @@ package com.example.kadir.tahminator;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 
 public class SignUPActivity extends ActionBarActivity
 {
-    EditText editTextEmail,editTextPassword,editTextConfirmPassword;
+    EditText editTextUsername,editTextPassword,editTextConfirmPassword, editTextEmail;
     Button btnCreateAccount;
 
     LoginDataBaseAdapter loginDataBaseAdapter;
@@ -33,9 +32,10 @@ public class SignUPActivity extends ActionBarActivity
         loginDataBaseAdapter=loginDataBaseAdapter.open();
 
         // Get Refferences of Views
-        editTextEmail =(EditText)findViewById(R.id.editTextSUUsername);
+        editTextUsername =(EditText)findViewById(R.id.editTextSUUsername);
         editTextPassword=(EditText)findViewById(R.id.editTextSUPassword);
         editTextConfirmPassword=(EditText)findViewById(R.id.editTextSUConfirmPassword);
+        editTextEmail =(EditText)findViewById(R.id.editTextSUEmail);
 
         btnCreateAccount=(Button)findViewById(R.id.buttonCreateAccount);
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
@@ -43,9 +43,10 @@ public class SignUPActivity extends ActionBarActivity
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-                String userName= editTextEmail.getText().toString();
+                String userName= editTextUsername.getText().toString();
                 String password=editTextPassword.getText().toString();
                 String confirmPassword=editTextConfirmPassword.getText().toString();
+                String email = editTextEmail.getText().toString();
 
                 // check if any of the fields are vaccant
                 if(userName.equals("")||password.equals("")||confirmPassword.equals(""))
@@ -62,7 +63,7 @@ public class SignUPActivity extends ActionBarActivity
                 else
                 {
                     // Save the Data in Database
-                    loginDataBaseAdapter.insertEntry(userName, password);
+                    loginDataBaseAdapter.insertEntry(userName, password, email);
                     Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
                 }
 

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background2"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SignUPActivityTest">
+
+    <EditText
+        android:id="@+id/editTextSUUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="188dp"
+        android:ems="10"
+        android:hint="@string/usernameHintSUString"
+        android:textColor="#FEDC"
+        android:textColorHint="#aa000000">
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextSUEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextSUUsername"
+        android:layout_alignStart="@+id/editTextSUUsername"
+        android:layout_below="@+id/editTextSUUsername"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/emailSUString"
+        android:inputType="textEmailAddress"
+        android:textColor="#FEDC"
+        android:textColorHint="#aa000000">
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextSUPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextSUEmail"
+        android:layout_alignStart="@+id/editTextSUEmail"
+        android:layout_below="@+id/editTextSUEmail"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/passwordSUString"
+        android:inputType="textPassword"
+        android:textColor="#FEDC"
+        android:textColorHint="#aa000000" />
+
+    <EditText
+        android:id="@+id/editTextSUConfirmPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/editTextSUPassword"
+        android:layout_alignLeft="@+id/editTextSUPassword"
+        android:layout_alignRight="@+id/editTextSUPassword"
+        android:layout_alignStart="@+id/editTextSUPassword"
+        android:layout_below="@+id/editTextSUPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="@string/confpasswordSUString"
+        android:inputType="textPassword"
+        android:textColor="#FEDC"
+        android:textColorHint="#aa000000" />
+
+    <Button
+        android:id="@+id/buttonCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextSUConfirmPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="20dp"
+        android:width="200dp"
+        android:text="@string/buttonCreateAccountString" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextSUUsername"
+        android:layout_alignTop="@+id/editTextSUUsername"
+        android:layout_toLeftOf="@+id/editTextSUPassword"
+        android:layout_toStartOf="@+id/editTextSUPassword"
+        android:contentDescription="contentDescription"
+        android:src="@drawable/username_icon" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextSUPassword"
+        android:layout_alignTop="@+id/editTextSUPassword"
+        android:layout_toLeftOf="@+id/editTextSUConfirmPassword"
+        android:layout_toStartOf="@+id/editTextSUConfirmPassword"
+        android:src="@drawable/password_icon" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextSUConfirmPassword"
+        android:layout_alignTop="@+id/editTextSUConfirmPassword"
+        android:layout_toLeftOf="@+id/editTextSUConfirmPassword"
+        android:layout_toStartOf="@+id/editTextSUConfirmPassword"
+        android:src="@drawable/password_icon" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextSUEmail"
+        android:layout_alignTop="@+id/editTextSUEmail"
+        android:layout_toLeftOf="@+id/editTextSUPassword"
+        android:layout_toStartOf="@+id/editTextSUPassword"
+        android:src="@drawable/email_icon" />
+
+</RelativeLayout>

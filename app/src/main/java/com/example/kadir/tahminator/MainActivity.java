@@ -4,16 +4,25 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
 
+    public FlyOutContainer root;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+
+        this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.flyout_screen, null);
+        this.setContentView(root);
     }
 
+    public void toggleMenu(View v){
+        this.root.toggleMenu();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

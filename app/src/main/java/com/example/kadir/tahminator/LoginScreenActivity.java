@@ -40,7 +40,7 @@ public class LoginScreenActivity extends ActionBarActivity {
 
         if(username != "" && password != ""){
 
-            //startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
         }
 
 

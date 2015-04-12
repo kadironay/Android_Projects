@@ -49,9 +49,9 @@ public class SignUPActivity extends ActionBarActivity
                 String email = editTextEmail.getText().toString();
 
                 // check if any of the fields are vaccant
-                if(userName.equals("")||password.equals("")||confirmPassword.equals(""))
+                if(userName.equals("")||password.equals("")||confirmPassword.equals("")||email.equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Field Vaccant", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Field Vacant", Toast.LENGTH_LONG).show();
                     return;
                 }
                 // check if both password matches

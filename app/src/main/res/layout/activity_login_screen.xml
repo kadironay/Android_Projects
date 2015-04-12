@@ -118,11 +118,5 @@
         android:layout_toStartOf="@+id/editTextSUPassword"
         android:src="@drawable/password_icon" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView6"
-        android:layout_above="@+id/editTextSUPassword"
-        android:layout_alignRight="@+id/checkBox"
-        android:layout_alignEnd="@+id/checkBox" />
+
 </RelativeLayout>

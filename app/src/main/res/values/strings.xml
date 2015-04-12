@@ -12,7 +12,7 @@
     <string name="buttonCreateAccountString">Create Account</string>
     <string name="usernameHintString">Username</string>
     <string name="passwordHintString">Password</string>
-    <string name="usernameHintSUString">User Name</string>
+    <string name="usernameHintSUString">Username</string>
     <string name="passwordSUString">Password</string>
     <string name="confpasswordSUString">Confirm Password</string>
     <string name="emailSUString">E-Mail</string>

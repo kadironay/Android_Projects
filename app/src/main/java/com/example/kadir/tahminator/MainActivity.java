@@ -1,5 +1,7 @@
 package com.example.kadir.tahminator;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +12,8 @@ import android.view.View;
 public class MainActivity extends ActionBarActivity {
 
     public FlyOutContainer root;
+    IMainActivityListener activityCommander;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +22,15 @@ public class MainActivity extends ActionBarActivity {
 
         this.root = (FlyOutContainer) this.getLayoutInflater().inflate(R.layout.flyout_screen, null);
         this.setContentView(root);
+
+
+        //activityCommander = (MainActivityListener) getCallingActivity();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     public void toggleMenu(View v){
@@ -42,7 +55,25 @@ public class MainActivity extends ActionBarActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        else if (id == R.id.signOutIcon){
+            activityCommander = new LoginScreenActivity();
+            activityCommander.signOut(this);
+
+            // Start the login screen activity
+            Intent intent = new Intent(this, LoginScreenActivity.class);
+            // finishing activity not to go back to this activity by back button
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public interface IMainActivityListener {
+        public void signOut(Context c);
     }
 }

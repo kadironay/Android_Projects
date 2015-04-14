@@ -16,4 +16,5 @@
     <string name="passwordSUString">Password</string>
     <string name="confpasswordSUString">Confirm Password</string>
     <string name="emailSUString">E-Mail</string>
+    <string name="menu_SignOutString">Sign Out</string>
 </resources>

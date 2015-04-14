@@ -2,9 +2,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.kadir.tahminator.MainActivity">
-    <item
+ <!--   <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="never" /> -->
+    <item android:id="@+id/signOutIcon"
+        android:icon="@drawable/signout_icon"
+        android:title="@string/menu_SignOutString"
+        app:showAsAction="ifRoom" />
 </menu>

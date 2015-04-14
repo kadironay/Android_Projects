@@ -14,10 +14,22 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 
-public class LoginScreenActivity extends ActionBarActivity {
+public class LoginScreenActivity extends ActionBarActivity implements MainActivity.IMainActivityListener {
 
     private EditText editTextUsername, editTextPassword;
     LoginDataBaseAdapter loginDataBaseAdapter;
+
+    @Override
+    public void signOut(Context c) {
+
+        // Removing all preferences
+        SharedPreferences sp = c.getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+        sp.edit().clear().commit();
+
+        // Removing single preference
+        //SharedPreferences settings = context.getSharedPreferences("PreferencesName", Context.MODE_PRIVATE);
+        //settings.edit().remove("KeyName").commit();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +51,10 @@ public class LoginScreenActivity extends ActionBarActivity {
         String password = sp.getString("passwordInput", "");
 
         if(username != "" && password != ""){
-
-            startActivity(new Intent(this, MainActivity.class));
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
         }
-
 
         // set listeners
         editTextUsername.addTextChangedListener(mTextWatcher);
@@ -116,12 +128,20 @@ public class LoginScreenActivity extends ActionBarActivity {
             editor.putString("usernameInput", usernameInput);
             editor.putString("passwordInput", passwordInput);
             editor.apply();
+        }
+
+        if(isLoginSuccessful){
+
+            if(!isChecked){
+                // Removing all preferences
+                SharedPreferences sp = getApplicationContext().getSharedPreferences("userinfo", Context.MODE_PRIVATE);
+                sp.edit().clear().commit();
+            }
 
             // Start MainActivity
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
         }
-
     }
 
     public void checkboxClicked(View view){}

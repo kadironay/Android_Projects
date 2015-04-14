@@ -3,6 +3,7 @@ package com.example.kadir.tahminator;
 import android.content.Context;
 import android.os.Handler;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -20,7 +21,7 @@ public class FlyOutContainer extends LinearLayout {
 
     public enum MenuState {
         CLOSED, OPEN, CLOSING, OPENING
-    };
+    }
 
     // Position information attributes
     protected int currentContentOffset = 0;
